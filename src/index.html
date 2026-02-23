@@ -56,3 +56,45 @@
 
 </body>
 </html>
+
+<section class="max-w-xl mx-auto py-12 px-8 bg-zinc-900/50 rounded-xl border border-zinc-800 my-12">
+    <h2 class="text-2xl mb-6 text-amber-500 italic">Ratio Calculator</h2>
+    
+    <div class="grid grid-cols-2 gap-4">
+        <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Coffee (grams)</label>
+            <input type="number" id="coffeeInput" value="20" 
+                   class="w-full bg-black border border-zinc-700 p-3 rounded text-amber-200 focus:border-amber-500 outline-none">
+        </div>
+        <div>
+            <label class="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Ratio (1:x)</label>
+            <input type="number" id="ratioInput" value="15" 
+                   class="w-full bg-black border border-zinc-700 p-3 rounded text-amber-200 focus:border-amber-500 outline-none">
+        </div>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-zinc-800 text-center">
+        <p class="text-zinc-400 text-sm uppercase tracking-tighter">Target Water Weight</p>
+        <div class="text-5xl font-bold text-amber-600 mt-2">
+            <span id="waterResult">300</span><span class="text-xl ml-1 text-zinc-600">ml</span>
+        </div>
+    </div>
+</section>
+
+<script>
+    const coffeeInput = document.getElementById('coffeeInput');
+    const ratioInput = document.getElementById('ratioInput');
+    const waterResult = document.getElementById('waterResult');
+
+    function calculate() {
+        const coffee = parseFloat(coffeeInput.value) || 0;
+        const ratio = parseFloat(ratioInput.value) || 0;
+        const totalWater = Math.round(coffee * ratio);
+        
+        waterResult.innerText = totalWater;
+    }
+
+    [coffeeInput, ratioInput].forEach(input => {
+        input.addEventListener('input', calculate);
+    });
+</script>
