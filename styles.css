@@ -1,0 +1,29 @@
+.coffee {
+    background-color: #4b2e26;
+    color: #fff;
+}
+
+.coffee h1 {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.coffee .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coffee .menu-item {
+    background-color: #6e4f4b;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.coffee .footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #3e2723;
+    color: #fff;
+}
